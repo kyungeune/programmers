@@ -9,11 +9,9 @@ def solution(n, words):
         wheel += 1
         
         while j < n:
-            print(i)
-            if words[i][0] != last:
-                print("last",last, "word[i][0]", words[i][0],"\n")
+            if words[i][0] != last:  # 끝난 단어로 시작하지 않으면
                 return [j + 1, wheel]
-            if words[i] in words[:i]:
+            if words[i] in words[:i]:  # 말했던 단어를 또 말하면
                 return [j + 1, wheel]
             
             last = words[i][len(words[i]) - 1]
