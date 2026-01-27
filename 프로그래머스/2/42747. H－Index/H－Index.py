@@ -1,15 +1,14 @@
 def solution(citations):
-    answer = 0
     citations.sort()
-    i = 0
+    i = 0  # 현재 인덱스
     
     while i < len(citations):
-        x = citations[i]
-        h = len(citations) - i
+        x = citations[i]  # 현재 인덱스에 들어있는 "숫자"
+        h = len(citations) - i  # 뒤쪽 인용 횟수
         
-        # 인용되지 않은 게 x번 이하거나, 인용된 게 x번 이상
-        if x >= h:
+        if x >= h:  # 처음으로 통과한 게 가장 큰 값
             return h
-        i += 1
+        
+        i += 1  # 하나씩 커지게 이동
     
-    return answer
+    return 0
